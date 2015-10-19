@@ -3,6 +3,10 @@ SHELL     := /usr/bin/env bash
 CPUS      := $(shell node -p "require('os').cpus().length" 2> /dev/null || echo 1)
 MAKEFLAGS += --jobs $(CPUS)
 
+#:Remove all generated assets
+.PHONY: clean
+clean:; @cat .gitignore | xargs rm -rf
+
 .PHONY: install
 install:
 	npm install
@@ -34,3 +38,6 @@ test:
 	time $(MOCHA) \
 		$(MOCHA_FLAGS) \
 		$(COMPILERS)
+
+release:
+	npm publish
