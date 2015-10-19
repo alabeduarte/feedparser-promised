@@ -1,0 +1,38 @@
+{
+  "name": "feedparser-promised",
+  "version": "0.0.0",
+  "description": "Wrapper around feedparser with promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alabeduarte/feedparser-promised.git"
+  },
+  "keywords": [
+    "feed",
+    "rss",
+    "node",
+    "nodejs",
+    "javascript",
+    "parser",
+    "promise"
+  ],
+  "author": "Alabê Duarte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alabeduarte/feedparser-promised/issues"
+  },
+  "homepage": "https://github.com/alabeduarte/feedparser-promised#readme",
+  "dependencies": {
+    "babel": "^5.8.23"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.3",
+    "chai": "^3.3.0",
+    "eslint": "^1.7.1",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3"
+  }
+}
