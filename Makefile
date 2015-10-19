@@ -14,7 +14,7 @@ clean:; @cat .gitignore | xargs rm -rf
 
 #:Run all tests
 .PHONY: test
-ESLINT := $(NODE_PATH)/eslint --parser 'babel-eslint' lib/** test/**
+ESLINT := $(NODE_PATH)/eslint --parser 'babel-eslint' src/** test/**
 COMPILERS   := --compilers js:babel/register
 ifdef CI
 NPM_INSTALL    := $(MAKE) install
