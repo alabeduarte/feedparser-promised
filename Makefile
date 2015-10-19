@@ -3,14 +3,16 @@ SHELL     := /usr/bin/env bash
 CPUS      := $(shell node -p "require('os').cpus().length" 2> /dev/null || echo 1)
 MAKEFLAGS += --jobs $(CPUS)
 
-#:Remove all generated assets
-.PHONY: clean
-clean:; @cat .gitignore | xargs rm -rf
-
+#:Install npm packages
 .PHONY: install
 install:
 	npm install
 
+#:Remove all generated assets
+.PHONY: clean
+clean:; @cat .gitignore | xargs rm -rf
+
+#:Run all tests
 .PHONY: test
 ESLINT := $(NODE_PATH)/eslint --parser 'babel-eslint' lib/** test/**
 COMPILERS   := --compilers js:babel/register
