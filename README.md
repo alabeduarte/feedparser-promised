@@ -18,6 +18,25 @@ Status](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master/build_
 ## Usage
 
 ```javascript
+  var feedparser = require('feedparser-promised');
+
+  feedparser.parse('http://feeds.feedwrench.com/JavaScriptJabber.rss').then(function (items) {
+    items.forEach(function (item) {
+      console.log('title: ', item.title);
+    });
+  });
+```
+
+## For ES6 users
+
+```javascript
+  import feedparser from 'feedparser-promised';
+
+  feedparser.parse('http://feeds.feedwrench.com/JavaScriptJabber.rss').then( (items) => {
+    items.forEach( (item) => {
+      console.log(`title: ${item.tittle}`);
+    });
+  });
 ```
 
 ### Contributing

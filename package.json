@@ -6,6 +6,21 @@
   "scripts": {
     "test": "make test"
   },
+  "dependencies": {
+    "babel": "^5.8.23",
+    "feedparser": "^1.1.3",
+    "request": "^2.65.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.3",
+    "chai": "^3.3.0",
+    "eslint": "^1.7.1",
+    "faker": "^3.0.1",
+    "istanbul": "^0.4.0",
+    "lodash": "^3.10.1",
+    "mocha": "^2.3.3",
+    "nock": "^2.15.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/alabeduarte/feedparser-promised.git"
@@ -24,15 +39,5 @@
   "bugs": {
     "url": "https://github.com/alabeduarte/feedparser-promised/issues"
   },
-  "homepage": "https://github.com/alabeduarte/feedparser-promised#readme",
-  "dependencies": {
-    "babel": "^5.8.23"
-  },
-  "devDependencies": {
-    "babel-eslint": "^4.1.3",
-    "chai": "^3.3.0",
-    "eslint": "^1.7.1",
-    "istanbul": "^0.4.0",
-    "mocha": "^2.3.3"
-  }
+  "homepage": "https://github.com/alabeduarte/feedparser-promised#readme"
 }
