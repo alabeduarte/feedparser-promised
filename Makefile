@@ -28,10 +28,10 @@ else
 MOCHA := $(NODE_PATH)/mocha
 endif
 MOCHA_FLAGS := --recursive \
-								--reporter $(MOCHA_REPORTER) \
-								--require test/helper
+	--reporter $(MOCHA_REPORTER) \
+	--require test/helper
 ifdef WATCH
-	MOCHA_FLAGS += --watch
+MOCHA_FLAGS += --watch
 endif
 test:
 	$(NPM_INSTALL)
