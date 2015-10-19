@@ -19,8 +19,9 @@ Status](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master/build_
 
 ```javascript
   var feedparser = require('feedparser-promised');
+  var url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
 
-  feedparser.parse('http://feeds.feedwrench.com/JavaScriptJabber.rss').then(function (items) {
+  feedparser.parse(url).then(function (items) {
     items.forEach(function (item) {
       console.log('title: ', item.title);
     });
@@ -32,7 +33,9 @@ Status](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master/build_
 ```javascript
   import feedparser from 'feedparser-promised';
 
-  feedparser.parse('http://feeds.feedwrench.com/JavaScriptJabber.rss').then( (items) => {
+  const url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
+
+  feedparser.parse(url).then( (items) => {
     items.forEach( (item) => {
       console.log(`title: ${item.tittle}`);
     });
