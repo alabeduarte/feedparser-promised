@@ -46,30 +46,22 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 
 ### List of article properties
 
-* title
-* description (frequently, the full article content)
-* summary (frequently, an excerpt of the article content)
-* link
-* origlink (when FeedBurner or Pheedo puts a special tracking url in the `link`
-  property, `origlink` contains the original link)
-* permalink (when an RSS feed has a `guid` field and the `isPermalink` attribute
-  is not set to `false`, `permalink` contains the value of `guid`)
-* date (most recent update)
-* pubdate (original published date)
-* author
-* guid (a unique identifier for the article)
-* comments (a link to the article's comments section)
-* image (an Object containing `url` and `title` properties)
-* categories (an Array of Strings)
-* source (an Object containing `url` and `title` properties pointing to the
-  original source for an article; see the [RSS
-  Spec](http://cyber.law.harvard.edu/rss/rss.html#ltsourcegtSubelementOfLtitemgt)
-  for an explanation of this element)
-* enclosures (an Array of Objects, each representing a podcast or other
-  enclosure and having a `url` property and possibly `type` and `length`
-  properties)
-* meta (an Object containing all the feed meta properties; especially handy when
-  using the EventEmitter interface to listen to `article` emissions)
+* `title`: title
+* `description`: frequently, the full article content
+* `summary`: frequently, an excerpt of the article content
+* `link`: link
+* `origlink`: when FeedBurner or Pheedo puts a special tracking url in the `link` property, `origlink` contains the original link
+* `permalink`: when an RSS feed has a `guid` field and the `isPermalink` attribute is not set to `false`, `permalink` contains the value of `guid`
+* `date`: most recent update
+* `pubdate`: original published date
+* `author`: author
+* `guid` a unique identifier for the article
+* `comments`: a link to the article's comments section
+* `image`: `an Object containing `url` and `title` properties
+* `categories`: an Array of Strings
+* `source`: an Object containing `url` and `title` properties pointing to the original source for an article; see the [RSS Spec](http://cyber.law.harvard.edu/rss/rss.html#ltsourcegtSubelementOfLtitemgt) for an explanation of this element
+* `enclosures`: an Array of Objects, each representing a podcast or other enclosure and having a `url` property and possibly `type` and `length` properties
+* `meta`: an Object containing all the feed meta properties; especially handy when using the EventEmitter interface to listen to `article` emissions
 
 ### Contributing
 
