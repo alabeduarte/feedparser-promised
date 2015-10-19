@@ -2,8 +2,9 @@
   "name": "feedparser-promised",
   "version": "0.0.0",
   "description": "Wrapper around feedparser with promises",
-  "main": "index.js",
+  "main": "lib/feedParserPromised.js",
   "scripts": {
+    "prepublish": "./node_modules/.bin/babel -d lib src/",
     "test": "make test"
   },
   "dependencies": {

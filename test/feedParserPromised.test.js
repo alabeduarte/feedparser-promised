@@ -3,7 +3,7 @@ import nock from 'nock';
 import fs from 'fs';
 import _ from 'lodash';
 
-import FeedParserPromised from '../lib/feedParserPromised';
+import FeedParserPromised from '../src/feedParserPromised';
 
 describe('FeedparserPromised', () => {
   describe('.parse', () => {
