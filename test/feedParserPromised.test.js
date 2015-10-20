@@ -25,7 +25,7 @@ describe('FeedparserPromised', () => {
         );
     });
 
-    describe('on end', () => {
+    describe('on success', () => {
       it('parses rss items', (done) => {
         const promise = FeedParserPromised.parse(someUrl);
 
