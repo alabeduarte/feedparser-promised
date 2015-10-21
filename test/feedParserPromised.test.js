@@ -42,5 +42,22 @@ describe('FeedparserPromised', () => {
         });
       });
     });
+
+    describe('on feedparse error', () => {
+      const invalidUrl = 'invalid url';
+
+      it('parses rss items', (done) => {
+        const promise = FeedParserPromised.parse(invalidUrl);
+
+        const errorInvalidURI = new Error('Invalid URI "invalid%20url"');
+        promise.catch( (error) => {
+          assert.deepEqual(errorInvalidURI, error);
+
+          done();
+        }).catch( (err) => {
+          done(err);
+        });
+      });
+    });
   });
 });

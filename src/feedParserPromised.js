@@ -5,12 +5,7 @@ export default class FeedParserPromised {
   static parse (url) {
     return new Promise( (resolve) => {
       const items = [];
-      const req = request(url);
       const feedparser = new FeedParser();
-
-      req.on('response', (response) => {
-        return response.pipe(feedparser);
-      });
 
       feedparser.on('readable', () => {
         let item;
@@ -20,9 +15,9 @@ export default class FeedParserPromised {
         return items;
       });
 
-      req.on('end', () => {
-        return resolve(items);
-      });
+      request.get(url)
+        .pipe(feedparser)
+        .on('end', () => { return resolve(items); });
     });
   }
 }
