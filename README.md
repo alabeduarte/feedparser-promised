@@ -27,6 +27,8 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
     items.forEach(function (item) {
       console.log('title: ', item.title);
     });
+  }).catch(function (error) {
+    console.log('error: ', error);
   });
 ```
 
@@ -41,6 +43,8 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
     items.forEach( (item) => {
       console.log(`title: ${item.tittle}`);
     });
+  }).catch( (error) => {
+    console.log('error: ', error);
   });
 ```
 
