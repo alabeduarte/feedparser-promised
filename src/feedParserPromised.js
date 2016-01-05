@@ -18,8 +18,8 @@ export default class FeedParserPromised {
       });
 
       request.get(url)
-        .pipe(feedparser)
         .on('error', (err) => { reject(err); })
+        .pipe(feedparser)
         .on('end', () => { return resolve(items); });
     });
   }
