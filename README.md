@@ -68,9 +68,18 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 * `meta`: an Object containing all the feed meta properties; especially handy when using the EventEmitter interface to listen to `article` emissions
 
 ### Contributing
+There are many ways to contribute, such as fixing opened issues, creating them
+or suggesting new ideas.
+Either way will be very appreciated.
+
+If there are issues open, I recommend you follow those steps:
+
+* Create a branch feedparser-promised#{issue_number}; eg: feedparser-promised#42
+* Please, remember to write unit tests.
+* Send a pull request!
 
 ### Running Tests
 
 ```bash
-$ make test
+$ npm test
 ```
