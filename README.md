@@ -83,3 +83,7 @@ If there are issues open, I recommend you follow those steps:
 ```bash
 $ npm test
 ```
+
+## License
+
+feedparser-promised is released under the [MIT License](http://www.opensource.org/licenses/MIT).
