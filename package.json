@@ -1,6 +1,6 @@
 {
   "name": "feedparser-promised",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "scripts": {
