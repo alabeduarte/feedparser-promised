@@ -12,9 +12,9 @@ describe('FeedparserPromised', () => {
 
     const someUrl = `${aHost}${aPath}`;
     const expectedItems = [
-      { tittle: 'Start City' },
-      { tittle: 'The Engine That Does More' },
-      { tittle: 'Astronauts Dirty Laundry' }
+      { title: 'Start City' },
+      { title: 'The Engine That Does More' },
+      { title: 'Astronauts Dirty Laundry' }
     ];
 
     beforeEach( () => {

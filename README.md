@@ -41,7 +41,7 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 
   feedparser.parse(url).then( (items) => {
     items.forEach( (item) => {
-      console.log(`title: ${item.tittle}`);
+      console.log(`title: ${item.title}`);
     });
   }).catch( (error) => {
     console.log('error: ', error);
