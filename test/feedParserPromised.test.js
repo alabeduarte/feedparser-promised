@@ -12,7 +12,7 @@ describe('FeedparserPromised', () => {
 
     const someUrl = `${aHost}${aPath}`;
     const expectedItems = [
-      { title: 'Start City' },
+      { title: 'Star City' },
       { title: 'The Engine That Does More' },
       { title: 'Astronauts Dirty Laundry' }
     ];
@@ -32,8 +32,8 @@ describe('FeedparserPromised', () => {
         promise.then( (items) => {
           assert.equal(expectedItems.length, items.length);
 
-          _.zip(expectedItems, items).forEach( (rightItem, leftItem) => {
-            assert.equal(rightItem.title, leftItem.title);
+          _.zip(expectedItems, items).forEach( (zippedItems) => {
+            assert.equal(zippedItems[0].title, zippedItems[1].title);
           });
 
           done();
