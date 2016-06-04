@@ -9,6 +9,8 @@ Status](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master/build_
 [downloads-image]: https://img.shields.io/npm/dm/feedparser-promised.svg?style=flat
 [downloads-url]: https://npmjs.org/package/feedparser-promised
 
+![](https://nodei.co/npm/feedparser-promised.svg?downloads=true&downloadRank=true&stars=true)
+
 Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with promises.
 
 ## Install
