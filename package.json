@@ -1,6 +1,6 @@
 {
   "name": "feedparser-promised",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "babel": "^5.8.23",
-    "feedparser": "^1.1.3",
-    "request": "^2.65.0"
+    "feedparser": "^1.1.4",
+    "request": "^2.74.0"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.3",
@@ -36,7 +36,7 @@
     "promise"
   ],
   "author": "Alabê Duarte",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alabeduarte/feedparser-promised/issues"
   },
