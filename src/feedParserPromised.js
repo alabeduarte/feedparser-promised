@@ -2,7 +2,7 @@ import request from 'request';
 import FeedParser from 'feedparser';
 
 export default class FeedParserPromised {
-  static parse (uri) {
+  static parse (options) {
     return new Promise( (resolve, reject) => {
       const items = [];
       const feedparser = new FeedParser();
@@ -19,7 +19,7 @@ export default class FeedParserPromised {
         return items;
       });
 
-      request.get(uri)
+      request.get(options)
         .on('error', (err) => { reject(err); })
         .pipe(feedparser)
         .on('end', () => { return resolve(items); });

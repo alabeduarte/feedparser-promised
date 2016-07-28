@@ -38,6 +38,26 @@ describe('FeedparserPromised', () => {
           done(err);
         });
       });
+
+      it('parses rss items using optionals parameters for request', (done) => {
+        nock(aHost).get(aPath).reply(200, rssFile);
+
+        const promise = FeedParserPromised.parse(
+          { uri: someUrl, timeout: 3000, foo: 'bar' }
+        );
+
+        promise.then( (items) => {
+          assert.equal(expectedItems.length, items.length);
+
+          _.zip(expectedItems, items).forEach( (zippedItems) => {
+            assert.equal(zippedItems[0].title, zippedItems[1].title);
+          });
+
+          done();
+        }).catch( (err) => {
+          done(err);
+        });
+      });
     });
 
     describe('on feedparse error', () => {
