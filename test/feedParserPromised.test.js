@@ -93,11 +93,11 @@ describe('FeedparserPromised', () => {
         });
       });
 
-      it('parses rss items', (done) => {
-        const invalidUrl = 'invalid url';
-        const promise = FeedParserPromised.parse(invalidUrl);
+      it('handles invalid uri', (done) => {
+        const invalidUri = 'invalid uri';
+        const promise = FeedParserPromised.parse(invalidUri);
 
-        const errorInvalidURI = new Error('Invalid URI "invalid%20url"');
+        const errorInvalidURI = new Error('Invalid URI "invalid%20uri"');
         promise.catch( (error) => {
           assert.deepEqual(errorInvalidURI, error);
 
