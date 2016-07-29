@@ -50,6 +50,19 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
   });
 ```
 
+## Using [HTTP Node.js](https://nodejs.org/api/http.html#http_http_get_options_callback) options
+```javascript
+import feedparser from 'feedparser-promised';
+
+const options = { 
+  uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss', 
+  timeout: 3000
+};
+
+feedparser.parse(options).then( (items) => { /* do your magic here */ });
+```
+
+
 ### List of article properties
 
 * `title`: title
