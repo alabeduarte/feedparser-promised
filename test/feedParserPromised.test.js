@@ -1,9 +1,9 @@
-import faker from 'faker';
-import nock from 'nock';
-import fs from 'fs';
-import _ from 'lodash';
+const faker = require('faker');
+const nock = require('nock');
+const fs = require('fs');
+const _ = require('lodash');
 
-import FeedParserPromised from '../src/feedParserPromised';
+const FeedParserPromised = require('../src/feedParserPromised');
 
 describe('FeedparserPromised', () => {
   describe('.parse', () => {
@@ -70,22 +70,6 @@ describe('FeedparserPromised', () => {
 
         promise.catch( (error) => {
           assert.deepEqual({ code: 'ESOCKETTIMEDOUT', connect: false }, error);
-
-          done();
-        }).catch( (err) => {
-          done(err);
-        });
-      });
-
-      it('handles error on timeout error', (done) => {
-        nock(aHost).get(aPath).delayConnection(2).reply(408, 'ETIMEDOUT');
-
-        const promise = FeedParserPromised.parse(
-          { uri: someUrl, timeout: 1 }
-        );
-
-        promise.catch( (error) => {
-          assert.deepEqual({ code: 'ETIMEDOUT', connect: false }, error);
 
           done();
         }).catch( (err) => {
