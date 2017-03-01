@@ -1,19 +1,16 @@
 {
   "name": "feedparser-promised",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "scripts": {
-    "prepublish": "./node_modules/.bin/babel -d lib src/",
     "test": "make test"
   },
   "dependencies": {
-    "babel": "^5.8.23",
     "feedparser": "^1.1.4",
     "request": "^2.74.0"
   },
   "devDependencies": {
-    "babel-eslint": "^4.1.3",
     "chai": "^3.3.0",
     "eslint": "^1.7.1",
     "faker": "^3.0.1",

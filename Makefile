@@ -3,8 +3,7 @@ SHELL     := /usr/bin/env bash
 CPUS      := $(shell node -p "require('os').cpus().length" 2> /dev/null || echo 1)
 MAKEFLAGS += --jobs $(CPUS)
 
-ESLINT      := $(NODE_PATH)/eslint --parser 'babel-eslint' src/** test/**
-COMPILERS   := --compilers js:babel/register
+ESLINT      := $(NODE_PATH)/eslint --parser src/** test/**
 MOCHA_FLAGS := --recursive --reporter spec --require test/helper
 
 #:Install npm packages
@@ -29,7 +28,7 @@ endif
 test:
 	$(NPM_INSTALL)
 	$(ESLINT)
-	NODE_ENV=test time $(MOCHA) $(MOCHA_FLAGS) $(COMPILERS)
+	NODE_ENV=test time $(MOCHA) $(MOCHA_FLAGS)
 
 release:
 	npm publish

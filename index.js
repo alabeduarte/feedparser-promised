@@ -1,3 +1,3 @@
-var FeedParserPromised = require('./lib/feedParserPromised');
+var FeedParserPromised = require('./src/feedParserPromised');
 
 exports = module.exports = FeedParserPromised;
