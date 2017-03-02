@@ -28,7 +28,7 @@ endif
 test:
 	$(NPM_INSTALL)
 	$(ESLINT)
-	NODE_ENV=test time $(MOCHA) $(MOCHA_FLAGS)
+	NODE_ENV=test $(MOCHA) $(MOCHA_FLAGS)
 
 release:
 	npm publish
