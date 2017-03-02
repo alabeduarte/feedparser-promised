@@ -22,7 +22,7 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 ## Usage
 
 ```javascript
-  import feedparser from 'feedparser-promised';
+  const feedparser = require('feedparser-promised');
 
   const url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
 
@@ -37,7 +37,7 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 
 ## Using [HTTP Node.js](https://nodejs.org/api/http.html#http_http_get_options_callback) options
 ```javascript
-import feedparser from 'feedparser-promised';
+const feedparser = require('feedparser-promised');
 
 const options = {
   uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss',
