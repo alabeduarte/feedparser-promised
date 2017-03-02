@@ -5,7 +5,7 @@ SHELL     := /usr/bin/env bash
 CPUS      := $(shell node -p "require('os').cpus().length" 2> /dev/null || echo 1)
 MAKEFLAGS += --jobs $(CPUS)
 
-ESLINT      := $(NODE_PATH)/eslint --parser src/** test/**
+ESLINT      := $(NODE_PATH)/eslint src/** test/**
 MOCHA_FLAGS := --recursive --reporter spec --require test/helper
 
 #:Install npm packages
@@ -22,6 +22,5 @@ else
 MOCHA := $(NODE_PATH)/mocha
 endif
 test:
-	$(NPM_INSTALL)
 	$(ESLINT)
 	NODE_ENV=test $(MOCHA) $(MOCHA_FLAGS)
