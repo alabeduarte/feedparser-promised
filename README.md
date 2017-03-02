@@ -2,8 +2,6 @@
 
 [![Build
 Status](https://travis-ci.org/alabeduarte/feedparser-promised.svg?branch=master)](https://travis-ci.org/alabeduarte/feedparser-promised)
-[![Build
-Status](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master/build_image)](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master)
 [![npm][npm-image]][npm-url]
 [![downloads][downloads-image]][downloads-url]
 [npm-image]: https://img.shields.io/npm/v/feedparser-promised.svg?style=flat

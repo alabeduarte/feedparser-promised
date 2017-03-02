@@ -1,3 +1,5 @@
+.PHONY: install clean test
+
 NODE_PATH := ./node_modules/.bin
 SHELL     := /usr/bin/env bash
 CPUS      := $(shell node -p "require('os').cpus().length" 2> /dev/null || echo 1)
@@ -7,19 +9,13 @@ ESLINT      := $(NODE_PATH)/eslint --parser src/** test/**
 MOCHA_FLAGS := --recursive --reporter spec --require test/helper
 
 #:Install npm packages
-.PHONY: install
 install:
 	npm install
 
 #:Remove all generated assets
-.PHONY: clean
 clean:; @cat .gitignore | xargs rm -rf
 
 #:Run all tests
-.PHONY: test
-ifdef CI
-NPM_INSTALL := $(MAKE) install
-endif
 ifdef COVERAGE
 MOCHA := $(NODE_PATH)/istanbul cover $(NODE_PATH)/_mocha --
 else
@@ -29,6 +25,3 @@ test:
 	$(NPM_INSTALL)
 	$(ESLINT)
 	NODE_ENV=test $(MOCHA) $(MOCHA_FLAGS)
-
-release:
-	npm publish

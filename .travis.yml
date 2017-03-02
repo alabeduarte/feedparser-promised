@@ -8,9 +8,9 @@ cache:
 notifications:
   email: false
 install:
-- make
+- make install
 script:
-- CI=true make test
+- COVERAGE=true make test
 deploy:
   on:
     branch: master
