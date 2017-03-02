@@ -1,6 +1,8 @@
 # feedparser-promised
 
 [![Build
+Status](https://travis-ci.org/alabeduarte/feedparser-promised.svg?branch=master)](https://travis-ci.org/alabeduarte/feedparser-promised)
+[![Build
 Status](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master/build_image)](https://snap-ci.com/alabeduarte/feedparser-promised/branch/master)
 [![npm][npm-image]][npm-url]
 [![downloads][downloads-image]][downloads-url]
@@ -22,21 +24,6 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 ## Usage
 
 ```javascript
-  var feedparser = require('feedparser-promised');
-  var url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
-
-  feedparser.parse(url).then(function (items) {
-    items.forEach(function (item) {
-      console.log('title: ', item.title);
-    });
-  }).catch(function (error) {
-    console.log('error: ', error);
-  });
-```
-
-## For ES6 users
-
-```javascript
   import feedparser from 'feedparser-promised';
 
   const url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
@@ -54,14 +41,13 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 ```javascript
 import feedparser from 'feedparser-promised';
 
-const options = { 
-  uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss', 
+const options = {
+  uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss',
   timeout: 3000
 };
 
 feedparser.parse(options).then( (items) => { /* do your magic here */ });
 ```
-
 
 ### List of article properties
 
