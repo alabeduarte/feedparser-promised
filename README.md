@@ -1,15 +1,12 @@
 # feedparser-promised
 
-[![Build
-Status](https://travis-ci.org/alabeduarte/feedparser-promised.svg?branch=master)](https://travis-ci.org/alabeduarte/feedparser-promised)
-[![npm][npm-image]][npm-url]
-[![downloads][downloads-image]][downloads-url]
-[npm-image]: https://img.shields.io/npm/v/feedparser-promised.svg?style=flat
-[npm-url]: https://npmjs.org/package/feedparser-promised
-[downloads-image]: https://img.shields.io/npm/dm/feedparser-promised.svg?style=flat
-[downloads-url]: https://npmjs.org/package/feedparser-promised
-
-![](https://nodei.co/npm/feedparser-promised.svg?downloads=true&downloadRank=true&stars=true)
+<p align="center">
+  <img src="https://img.shields.io/npm/v/feedparser-promised.svg" alt="npm version">
+  <img src="https://img.shields.io/npm/dm/feedparser-promised.svg" alt="downloads">
+  <img src="https://img.shields.io/npm/l/feedparser-promised.svg" alt="npm license">
+  <img src="https://img.shields.io/travis/alabeduarte/feedparser-promised.svg" alt="travis">
+  <img src="https://img.shields.io/codeclimate/github/alabeduarte/feedparser-promised.svg" alt="codeclimate score">
+</div>
 
 Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with promises.
 
