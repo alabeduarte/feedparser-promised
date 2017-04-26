@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/npm/l/feedparser-promised.svg" alt="npm license">
   <img src="https://img.shields.io/travis/alabeduarte/feedparser-promised.svg" alt="travis">
   <img src="https://img.shields.io/codeclimate/github/alabeduarte/feedparser-promised.svg" alt="codeclimate score">
-</div>
+</p>
 
 Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with promises.
 
