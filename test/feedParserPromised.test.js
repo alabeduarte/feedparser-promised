@@ -34,11 +34,7 @@ describe('FeedparserPromised', () => {
           _.zip(expectedItems, items).forEach( (zippedItems) => {
             assert.equal(zippedItems[0].title, zippedItems[1].title);
           });
-
-          done();
-        }).catch( (err) => {
-          done(err);
-        });
+        }).then(done).catch( (err) => done(err));
       });
 
       it('parses rss items using optionals parameters for request', (done) => {
@@ -54,11 +50,7 @@ describe('FeedparserPromised', () => {
           _.zip(expectedItems, items).forEach( (zippedItems) => {
             assert.equal(zippedItems[0].title, zippedItems[1].title);
           });
-
-          done();
-        }).catch( (err) => {
-          done(err);
-        });
+        }).then(done).catch( (err) => done(err));
       });
     });
 
@@ -72,11 +64,7 @@ describe('FeedparserPromised', () => {
 
         promise.catch( (error) => {
           assert.deepEqual({ code: 'ESOCKETTIMEDOUT', connect: false }, error);
-
-          done();
-        }).catch( (err) => {
-          done(err);
-        });
+        }).then(done).catch( (err) => done(err));
       });
 
       it('handles invalid uri', (done) => {
@@ -86,11 +74,7 @@ describe('FeedparserPromised', () => {
         const errorInvalidURI = new Error('Invalid URI "invalid%20uri"');
         promise.catch( (error) => {
           assert.deepEqual(errorInvalidURI, error);
-
-          done();
-        }).catch( (err) => {
-          done(err);
-        });
+        }).then(done).catch( (err) => done(err));
       });
     });
   });

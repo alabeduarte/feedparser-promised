@@ -8,9 +8,9 @@ cache:
 notifications:
   email: false
 install:
-- make install
+- npm install
 script:
-- COVERAGE=true make test
+- npm test
 deploy:
   on:
     branch: master

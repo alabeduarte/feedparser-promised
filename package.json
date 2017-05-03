@@ -1,10 +1,11 @@
 {
   "name": "feedparser-promised",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "pretest": "eslint src/** test**",
+    "test": "istanbul cover _mocha -- --recursive"
   },
   "dependencies": {
     "feedparser": "^2.1.0",
