@@ -1,12 +1,10 @@
 # feedparser-promised
 
-<p align="center">
-  <img src="https://img.shields.io/npm/v/feedparser-promised.svg" alt="npm version">
-  <img src="https://img.shields.io/npm/dm/feedparser-promised.svg" alt="downloads">
-  <img src="https://img.shields.io/npm/l/feedparser-promised.svg" alt="npm license">
-  <img src="https://img.shields.io/travis/alabeduarte/feedparser-promised.svg" alt="travis">
-  <img src="https://img.shields.io/codeclimate/github/alabeduarte/feedparser-promised.svg" alt="codeclimate score">
-</p>
+[![npm version](https://img.shields.io/npm/v/feedparser-promised.svg)](https://www.npmjs.com/package/feedparser-promised)
+[![downloads](https://img.shields.io/npm/dm/feedparser-promised.svg)](https://www.npmjs.com/package/feedparser-promised)
+[![npm license](https://img.shields.io/npm/l/feedparser-promised.svg)](https://spdx.org/licenses/MIT)
+[![travis build](https://img.shields.io/travis/alabeduarte/feedparser-promised.svg)](https://travis-ci.org/alabeduarte/feedparser-promised)
+[![codeclimate score](https://img.shields.io/codeclimate/github/alabeduarte/feedparser-promised.svg)](https://codeclimate.com/github/alabeduarte/feedparser-promised)
 
 Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with promises.
 
@@ -24,12 +22,8 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
   const url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
 
   feedparser.parse(url).then( (items) => {
-    items.forEach( (item) => {
-      console.log(`title: ${item.title}`);
-    });
-  }).catch( (error) => {
-    console.log('error: ', error);
-  });
+    items.forEach(item => console.log('title:', item.title));
+  }).catch(error => console.error('error: ', error));
 ```
 
 ## Using [HTTP Node.js](https://nodejs.org/api/http.html#http_http_get_options_callback) options
@@ -38,7 +32,9 @@ const feedparser = require('feedparser-promised');
 
 const options = {
   uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss',
-  timeout: 3000
+  timeout: 3000,
+  gzip: true,
+  // ...
 };
 
 feedparser.parse(options).then( (items) => { /* do your magic here */ });
@@ -82,4 +78,4 @@ $ npm test
 
 ## License
 
-feedparser-promised is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+`feedparser-promised` is released under the [MIT License](http://www.opensource.org/licenses/MIT).
