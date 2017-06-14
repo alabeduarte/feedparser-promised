@@ -3,13 +3,16 @@
   "version": "1.2.2",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "pretest": "eslint src/** test**",
     "test": "istanbul cover _mocha -- --recursive"
   },
   "dependencies": {
     "feedparser": "^2.1.0",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "@types/node-feedparser": "2.2.0",
+    "@types/request": "0.0.43"
   },
   "devDependencies": {
     "chai": "^3.5.0",
