@@ -7,7 +7,7 @@
   "scripts": {
     "pretest": "eslint src/** test**",
     "test": "istanbul cover _mocha -- --recursive",
-    "build": "babel src -d lib"
+    "prepare": "./node_modules/.bin/babel src -d lib"
   },
   "dependencies": {
     "feedparser": "^2.1.0",
@@ -40,7 +40,9 @@
     "promise"
   ],
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   },
   "author": "Alabê Duarte",
   "license": "MIT",
