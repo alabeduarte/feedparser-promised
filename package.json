@@ -9,6 +9,9 @@
     "test": "istanbul cover _mocha -- --recursive",
     "prepare": "./node_modules/.bin/babel src -d lib"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "feedparser": "^2.1.0",
     "request": "^2.79.0",
