@@ -6,8 +6,12 @@
   "types": "index.d.ts",
   "scripts": {
     "pretest": "eslint src/** test**",
-    "test": "istanbul cover _mocha -- --recursive"
+    "test": "istanbul cover _mocha -- --recursive",
+    "prepare": "./node_modules/.bin/babel src -d lib"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "feedparser": "^2.1.0",
     "request": "^2.79.0",
@@ -15,6 +19,8 @@
     "@types/request": "0.0.43"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "eslint": "^3.16.1",
     "faker": "^4.1.0",
@@ -36,6 +42,11 @@
     "parser",
     "promise"
   ],
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "author": "Alabê Duarte",
   "license": "MIT",
   "bugs": {
