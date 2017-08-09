@@ -8,6 +8,7 @@ cache:
 notifications:
   email: false
 install:
+- npm install -g babel-cli
 - npm install
 script:
 - npm test

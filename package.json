@@ -7,7 +7,7 @@
   "scripts": {
     "pretest": "eslint src/** test**",
     "test": "istanbul cover _mocha -- --recursive",
-    "prepare": "./node_modules/.bin/babel src -d lib"
+    "prepare": "babel src -d lib"
   },
   "files": [
     "lib"
