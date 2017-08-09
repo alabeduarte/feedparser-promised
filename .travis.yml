@@ -8,7 +8,7 @@ cache:
 notifications:
   email: false
 install:
-  - npm install -g babel-cli@6.24.1 babel-preset-es2015@6.24.1
+  - npm install -g babel-cli babel-preset-es2015
   - npm install
 script:
   - npm test
