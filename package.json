@@ -42,11 +42,6 @@
     "parser",
     "promise"
   ],
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "author": "Alabê Duarte",
   "license": "MIT",
   "bugs": {
