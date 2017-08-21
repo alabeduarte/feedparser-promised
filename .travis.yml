@@ -11,7 +11,8 @@ install:
 - npm install
 script:
 - npm test
-- npm smoke
+after_script:
+- npm run smoke
 deploy:
   on:
     branch: master
