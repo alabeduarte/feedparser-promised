@@ -11,7 +11,6 @@ install:
 - npm install
 script:
 - npm test
-after_script:
 - npm run smoke
 deploy:
   on:
