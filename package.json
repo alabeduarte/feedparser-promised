@@ -1,13 +1,14 @@
 {
   "name": "feedparser-promised",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "pretest": "eslint src/** test**",
     "test": "istanbul cover _mocha -- --recursive",
-    "prepare": "babel src -d lib"
+    "prepare": "babel src -d lib",
+    "smoke": "./smoke.sh"
   },
   "files": [
     "lib"
