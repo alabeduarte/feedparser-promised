@@ -1,17 +1,17 @@
 sudo: false
 language: node_js
 node_js:
-- 8.4.0
+- 7.6.0
 cache:
   directories:
   - node_modules
 notifications:
   email: false
 install:
-  - npm install
+- npm install
 script:
-  - npm test
-  - npm smoke
+- npm test
+- npm smoke
 deploy:
   on:
     branch: master
