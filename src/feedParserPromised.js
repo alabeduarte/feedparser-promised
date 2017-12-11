@@ -4,10 +4,10 @@ const request = require('request');
 const FeedParser = require('feedparser');
 
 module.exports = class FeedParserPromised {
-  static parse (options) {
+  static parse (requestOptions, feedparserOptions) {
     return new Promise( (resolve, reject) => {
       const items = [];
-      const feedparser = new FeedParser();
+      const feedparser = new FeedParser(feedparserOptions);
 
       feedparser.on('error', (err) => { reject(err); });
 
@@ -19,7 +19,7 @@ module.exports = class FeedParserPromised {
         return items;
       });
 
-      request.get(options)
+      request.get(requestOptions)
         .on('error', (err) => { reject(err); })
         .pipe(feedparser)
         .on('end', () => { return resolve(items); });
