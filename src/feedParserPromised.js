@@ -11,7 +11,7 @@ module.exports = class FeedParserPromised {
       const items = [];
       const feedparser = new FeedParser(feedparserOptions);
 
-      if (feedparserOptions.onError) {
+      if (feedparserOptions && feedparserOptions.onError) {
         feedparser.on('error', feedparserOptions.onError);
       } else {
         feedparser.on('error', (err) => { reject(err); });
@@ -27,7 +27,7 @@ module.exports = class FeedParserPromised {
 
       const req = request.get(requestOptions);
 
-      if (requestOptions.onError) {
+      if (requestOptions && requestOptions.onError) {
         req.on('error', requestOptions.onError);
       } else {
         req.on('error', (err) => { reject(err); });
