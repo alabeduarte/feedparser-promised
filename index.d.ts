@@ -1,7 +1,7 @@
 declare module 'feedparser-promised' {
 
-	import { Options as RequestOptions } from 'request';
-	import { Options as FeedparserOptions } from 'feedparser';
+	import { RequestOptions } from './request-options-ext';
+	import { FeedparserOptions } from './feedparser-options-ext';
 	import { Item } from 'node-feedparser';
 
 	export function parse(url: string): Promise<Item[]>;

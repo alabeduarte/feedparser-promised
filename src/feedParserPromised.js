@@ -9,7 +9,11 @@ module.exports = class FeedParserPromised {
       const items = [];
       const feedparser = new FeedParser(feedparserOptions);
 
-      feedparser.on('error', (err) => { reject(err); });
+      if (feedparserOptions.onError) {
+        feedparser.on('error', feedparserOptions.onError);
+      } else {
+        feedparser.on('error', (err) => { reject(err); });
+      }
 
       feedparser.on('readable', () => {
         let item;
@@ -19,10 +23,16 @@ module.exports = class FeedParserPromised {
         return items;
       });
 
-      request.get(requestOptions)
-        .on('error', (err) => { reject(err); })
-        .pipe(feedparser)
-        .on('end', () => { return resolve(items); });
+      const req = request.get(requestOptions);
+
+      if (requestOptions.onError) {
+        req.on('error', requestOptions.onError);
+      } else {
+        req.on('error', (err) => { reject(err); });
+      }
+
+      req.pipe(feedparser);
+      req.on('end', () => { return resolve(items); });
     });
   }
 };
