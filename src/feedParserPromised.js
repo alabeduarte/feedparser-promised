@@ -9,7 +9,11 @@ module.exports = class FeedParserPromised {
       const items = [];
       const feedparser = new FeedParser(feedparserOptions);
 
-      feedparser.on('error', (err) => { reject(err); });
+      if (feedparserOptions.onError) {
+        feedparser.on('error', feedparserOptions.onError);
+      } else {
+        feedparser.on('error', (err) => { reject(err); });
+      }
 
       feedparser.on('readable', () => {
         let item;
