@@ -18,8 +18,7 @@
     "@types/request": "0.0.45",
     "feedparser": "^2.1.0",
     "iconv": "^2.3.0",
-    "request": "^2.79.0",
-    "zlib": "^1.0.5"
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
