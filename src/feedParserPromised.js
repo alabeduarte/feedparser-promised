@@ -24,6 +24,7 @@ module.exports = class FeedParserPromised {
 
         return items;
       });
+      feedparser.on('end', () => { return resolve(items); });
 
       const req = request.get(requestOptions);
 
@@ -51,9 +52,8 @@ module.exports = class FeedParserPromised {
 
         res = FeedParserPromised._maybeDecompress(res, encoding);
         res = FeedParserPromised._maybeTranslate(res, charset);
-        res.pipe(feedparser);
+        return res.pipe(feedparser);
       });
-      req.on('end', () => { return resolve(items); });
     });
   }
 
