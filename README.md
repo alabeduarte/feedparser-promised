@@ -30,14 +30,33 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 ```javascript
 const feedparser = require('feedparser-promised');
 
-const options = {
+const httpOptions = {
   uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss',
   timeout: 3000,
   gzip: true,
   // ...
 };
 
-feedparser.parse(options).then( (items) => { /* do your magic here */ });
+feedparser.parse(httpOptions).then( (items) => { /* do your magic here */ });
+```
+
+## Using [Feedparser](https://github.com/danmactough/node-feedparser#options) options
+```javascript
+const feedparser = require('feedparser-promised');
+
+const httpOptions = {
+  uri: 'http://feeds.feedwrench.com/JavaScriptJabber.rss',
+  // ...
+};
+
+const feedparserOptions = {
+  feedurl: 'http://feeds.feedwrench.com/JavaScriptJabber.rss',
+  normalize: false,
+  addmeta: false,
+  resume_saxerror: true
+};
+
+feedparser.parse(httpOptions, feedparserOptions).then( (items) => { /* do your magic here */ });
 ```
 
 ### List of article properties
