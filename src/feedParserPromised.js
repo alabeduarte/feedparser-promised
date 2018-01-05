@@ -5,56 +5,58 @@ const FeedParser = require('feedparser');
 const Iconv = require('iconv').Iconv;
 const zlib = require('zlib');
 
+let items = [];
+let feedparser;
+
 module.exports = class FeedParserPromised {
   static parse (requestOptions, feedparserOptions) {
-    return new Promise( (resolve, reject) => {
-      const items = [];
-      const feedparser = new FeedParser(feedparserOptions);
+    return new Promise((resolve, reject) => {
+      items = [];
+      feedparser = new FeedParser(feedparserOptions);
+      const req = request.get(requestOptions);
+      const feedparserErrorHandler = feedparserOptions && feedparserOptions.onError
+        ? feedparserOptions.onError
+        : (err) => { reject(err); };
+      const requestErrorHandler = requestOptions && requestOptions.onError
+        ? requestOptions.onError
+        : (err) => { reject(err); };
 
-      if (feedparserOptions && feedparserOptions.onError) {
-        feedparser.on('error', feedparserOptions.onError);
-      } else {
-        feedparser.on('error', (err) => { reject(err); });
-      }
-
-      feedparser.on('readable', () => {
-        let item;
-
-        while(item = feedparser.read()) { items.push(item); }
-
-        return items;
-      });
+      feedparser.on('error', feedparserErrorHandler);
+      feedparser.on('readable', FeedParserPromised._feedHandler);
       feedparser.on('end', () => { return resolve(items); });
 
-      const req = request.get(requestOptions);
+      req.on('error', requestErrorHandler);
+      req.on('response', FeedParserPromised._responseHandler);
+    });
+  }
 
-      if (requestOptions && requestOptions.onError) {
-        req.on('error', requestOptions.onError);
-      } else {
-        req.on('error', (err) => { reject(err); });
+  static _feedHandler() {
+    let item;
+
+    while (item = this.read()) { items.push(item); }
+
+    return items;
+  }
+
+  static _responseHandler(res) {
+    if (res.statusCode !== 200) {
+      req.emit(new Error('HTTP response code !== 200'));
+    }
+
+    const encoding = res.headers['content-encoding'] || 'identity';
+    const charset = (res.headers['content-type'] || '').split(';').reduce((params, param) => {
+      const parts = param.split('=').map(part => { return part.trim(); });
+
+      if (parts.length === 2) {
+        params[parts[0]] = parts[1];
       }
 
-      req.on('response', (res) => {
-        if (res.statusCode !== 200) {
-          req.emit(new Error('HTTP response code !== 200'));
-        }
+      return params;
+    }, {}).charset;
 
-        const encoding = res.headers['content-encoding'] || 'identity';
-        const charset = (res.headers['content-type'] || '').split(';').reduce((params, param) => {
-          const parts = param.split('=').map(part => { return part.trim(); });
-
-          if (parts.length === 2) {
-            params[parts[0]] = parts[1];
-          }
-
-          return params;
-        }, {}).charset;
-
-        res = FeedParserPromised._maybeDecompress(res, encoding);
-        res = FeedParserPromised._maybeTranslate(res, charset);
-        return res.pipe(feedparser);
-      });
-    });
+    res = FeedParserPromised._maybeDecompress(res, encoding);
+    res = FeedParserPromised._maybeTranslate(res, charset);
+    return res.pipe(feedparser);
   }
 
   static _maybeDecompress(res, encoding) {

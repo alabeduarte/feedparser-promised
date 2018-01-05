@@ -1,5 +1,5 @@
 'use strict';
 
-var FeedParserPromised = require('./lib/feedParserPromised');
+const FeedParserPromised = require('./lib/feedParserPromised');
 
 exports = module.exports = FeedParserPromised;
