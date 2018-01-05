@@ -11,21 +11,20 @@ let feedparser;
 module.exports = class FeedParserPromised {
   static parse (requestOptions, feedparserOptions) {
     return new Promise((resolve, reject) => {
+      requestOptions = typeof requestOptions == 'string' ? { uri: requestOptions, onError: reject } : requestOptions;
+      requestOptions.onError = requestOptions.onError || reject;
+      feedparserOptions = feedparserOptions || { onError: reject };
+      feedparserOptions.onError = feedparserOptions.onError || reject;
+
       items = [];
       feedparser = new FeedParser(feedparserOptions);
       const req = request.get(requestOptions);
-      const feedparserErrorHandler = feedparserOptions && feedparserOptions.onError
-        ? feedparserOptions.onError
-        : (err) => { reject(err); };
-      const requestErrorHandler = requestOptions && requestOptions.onError
-        ? requestOptions.onError
-        : (err) => { reject(err); };
 
-      feedparser.on('error', feedparserErrorHandler);
+      feedparser.on('error', feedparserOptions.onError);
       feedparser.on('readable', FeedParserPromised._feedHandler);
       feedparser.on('end', () => { return resolve(items); });
 
-      req.on('error', requestErrorHandler);
+      req.on('error', requestOptions.onError);
       req.on('response', FeedParserPromised._responseHandler);
     });
   }
