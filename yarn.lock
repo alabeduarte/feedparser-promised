@@ -12,9 +12,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node-feedparser@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@types/node-feedparser/-/node-feedparser-2.2.0.tgz#eccc5b5969be8603965f22dc22b8f805494d93ac"
+"@types/node-feedparser@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@types/node-feedparser/-/node-feedparser-2.2.1.tgz#81ecf04b76c80de40138c57b26a4249033531c78"
   dependencies:
     "@types/node" "*"
     "@types/sax" "*"
