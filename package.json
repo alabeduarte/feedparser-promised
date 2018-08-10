@@ -1,6 +1,6 @@
 {
   "name": "feedparser-promised",
-  "version": "1.5.0",
+  "version": "2.0.0-rc",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "types": "index.d.ts",
@@ -48,7 +48,7 @@
       "es2015"
     ]
   },
-  "author": "Alabê Duarte",
+  "author": "Alabe Duarte",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alabeduarte/feedparser-promised/issues"
