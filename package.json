@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@types/node-feedparser": "2.2.0",
-    "@types/request": "0.0.45",
+    "@types/request": "^2.47.1",
     "feedparser": "^2.1.0",
     "request": "^2.79.0"
   },
