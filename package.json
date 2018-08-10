@@ -15,10 +15,10 @@
     "lib"
   ],
   "dependencies": {
-    "feedparser": "^2.1.0",
-    "request": "^2.79.0",
     "@types/node-feedparser": "2.2.0",
-    "@types/request": "0.0.45"
+    "@types/request": "0.0.45",
+    "feedparser": "^2.1.0",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -28,7 +28,7 @@
     "faker": "^4.1.0",
     "istanbul": "^0.4.5",
     "lodash": "^4.17.4",
-    "mocha": "^3.2.0",
+    "mocha": "^5.2.0",
     "nock": "^9.0.9"
   },
   "repository": {
