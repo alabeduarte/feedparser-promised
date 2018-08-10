@@ -5,7 +5,8 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "pretest": "eslint src/** test**",
+    "lint": "eslint src/** test**",
+    "pretest": "yarn lint",
     "test": "istanbul cover _mocha -- --recursive",
     "prepare": "babel src -d lib",
     "smoke": "./smoke.sh"
