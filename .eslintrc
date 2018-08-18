@@ -10,8 +10,8 @@
   "globals": {
     "assert": true
   },
-  "ecmaFeatures": {
-    "modules": true
+  "parserOptions": {
+    "ecmaVersion": 8
   },
   "rules": {
     "no-cond-assign": 0,

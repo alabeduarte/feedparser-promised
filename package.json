@@ -6,8 +6,10 @@
   "types": "index.d.ts",
   "scripts": {
     "lint": "eslint src/** test**",
+    "format": "prettier-eslint \"src/**/*.js\" --write",
     "pretest": "yarn lint",
-    "test": "istanbul cover _mocha -- --recursive",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
     "prepare": "babel src -d lib",
     "smoke": "./smoke.sh"
   },
@@ -22,14 +24,18 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "chai": "^3.5.0",
-    "eslint": "^3.16.1",
+    "eslint": "^5.3.0",
     "faker": "^4.1.0",
-    "istanbul": "^0.4.5",
+    "jest": "^23.4.2",
     "lodash": "^4.17.4",
-    "mocha": "^5.2.0",
-    "nock": "^9.0.9"
+    "nock": "^9.0.9",
+    "prettier-eslint-cli": "^4.7.1",
+    "xmlbuilder": "^10.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -45,6 +51,14 @@
     "promise"
   ],
   "babel": {
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ],
     "presets": [
       "es2015"
     ]

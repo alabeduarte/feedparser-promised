@@ -3,26 +3,27 @@
 const request = require('request');
 const FeedParser = require('feedparser');
 
-module.exports = class FeedParserPromised {
-  static parse (requestOptions, feedparserOptions) {
-    return new Promise( (resolve, reject) => {
-      const items = [];
-      const feedparser = new FeedParser(feedparserOptions);
+const parse = (requestOptions, feedparserOptions) => {
+  return new Promise((resolve, reject) => {
+    const parsedItems = [];
 
-      feedparser.on('error', (err) => { reject(err); });
+    const feedParser = new FeedParser(feedparserOptions);
+    feedParser.on('error', reject).on('readable', () => {
+      let item;
 
-      feedparser.on('readable', () => {
-        let item;
+      while (item = feedParser.read()) {
+        parsedItems.push(item);
+      }
 
-        while(item = feedparser.read()) { items.push(item); }
-
-        return items;
-      });
-
-      request.get(requestOptions)
-        .on('error', (err) => { reject(err); })
-        .pipe(feedparser)
-        .on('end', () => { return resolve(items); });
+      return parsedItems;
     });
-  }
+
+    request
+      .get(requestOptions)
+      .on('error', reject)
+      .pipe(feedParser)
+      .on('end', () => resolve(parsedItems));
+  });
 };
+
+module.exports = { parse };
