@@ -1,0 +1,10 @@
+version: '2'
+services:
+  smoke-test:
+    image: node:10.11.0-alpine
+    working_dir: /home/feedparser-promised
+    command: ./smoke.sh
+    volumes:
+      - ./:/home/feedparser-promised
+    environment:
+      - NODE_ENV=test

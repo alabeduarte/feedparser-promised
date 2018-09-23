@@ -21,9 +21,9 @@ Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with
 
   const url = 'http://feeds.feedwrench.com/JavaScriptJabber.rss';
 
-  feedparser.parse(url).then( (items) => {
+  feedparser.parse(url).then(items =>
     items.forEach(item => console.log('title:', item.title));
-  }).catch(error => console.error('error: ', error));
+  ).catch(console.error);
 ```
 
 ## Using [HTTP Node.js](https://nodejs.org/api/http.html#http_http_get_options_callback) options
@@ -37,7 +37,7 @@ const httpOptions = {
   // ...
 };
 
-feedparser.parse(httpOptions).then( (items) => { /* do your magic here */ });
+feedparser.parse(httpOptions).then(items => { /* do your magic here */ });
 ```
 
 ## Using [Feedparser](https://github.com/danmactough/node-feedparser#options) options
@@ -56,7 +56,7 @@ const feedparserOptions = {
   resume_saxerror: true
 };
 
-feedparser.parse(httpOptions, feedparserOptions).then( (items) => { /* do your magic here */ });
+feedparser.parse(httpOptions, feedparserOptions).then(items => { /* do your magic here */ });
 ```
 
 ### List of article properties

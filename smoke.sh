@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
@@ -10,7 +10,7 @@ dir=$1
 echo "packing"
 
 rm -rf $dir
-npm pack
+yarn pack
 mkdir -p $dir
 mv *.tgz $dir
 
@@ -25,10 +25,11 @@ dir=$1
 cd $dir
 
 package=`ls | grep *.tgz`
-npm init -y
+yarn init -y
 
 echo "installing package from local source"
-npm install $package mocha@3.2.0
+yarn add file:$package
+yarn add mocha@5.2.0
 }
 
 function generate_file () {
