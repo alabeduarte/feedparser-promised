@@ -1,6 +1,6 @@
 sudo: required
 services:
-  - docker
+- docker
 language: node_js
 cache:
   directories:
@@ -8,10 +8,10 @@ cache:
 notifications:
   email: false
 install:
-  - yarn install
+- yarn install
 script:
-  - yarn test
-  - yarn smoke
+- yarn test
+- yarn smoke
 deploy:
   on:
     branch: master
@@ -19,4 +19,4 @@ deploy:
   skip_cleanup: true
   email: alabeduarte@gmail.com
   api_key:
-    secure: pHz2Rdlins25zy33W+ba3iy2xdyqa6DwtJO3Y0qa8uKkKNuVs0dAOS1ddXgtMrQl0ts2+yZoBdPcoLo8TH0J2i8iB5EzalE5v6jjNm2//EGlL/vbB/s3NO48sySKg5UH/stG1QnxCxZ7g9incNVmw4GnzvJWrY7mke7h1KrR6M6YN3QCu/FZVtaF6PrWYshy9c649PejxSo8nUkkcvefhESoEafRe/KT9+SXMgzMlr24ll2LUowxyIyoyPoQLERPOUjgSNFI5+thjDIVfgKj9Pd4om1ElC0j1zucVNeVN3ZpidMdk0mQk+HOB0J7MltMeYQSRRRbTkonfnTD7Z8EBgHnD9CLD1zwJjdK9rOJgElO+FoHQjUNV6hkE9BA1qS6R6fATi0SXbhLC3OFciqdA2+Yl8OxtHgUkO3IDYBCQ3iLK5td60NzHdesRjE97Hqg4kcy3pLT34ZIhlpcfe7sJu02AVUv1tyVwFT6tFox8PdmPP3LQidubmie+7LdHvhZppcPbJ1uCuGLawnRKiufNPUe2l8Sg5+5J5R2pZDOmv4m5C5INAZ3dcfvT1AnyicgTrvI9gaYOTQMTO6x5cOocZoBHCYHpm9ugH0AVbe/qbItRBGeVOf7Ar2c0fyV2fE/dfs42re4ZmB2KIvZfXrHggSJkCwIzcHJou4hEfhW3Vc=
+    secure: Ze+0nShEJvpKQqZQGriRxMFu0zDQ5C1bMzvbq625gB0TVwDlicx+peS4SwvgmxFSouJH1FAcHQAeO2RWyicYNWVZt0uDGSfaaJAUe3nJI9PtUrQK6VPKMsLDNWfYFr6xhTK9takXLWVt2XH8SelZOPjQgrXcNLT+liDPZI4BmDETIjN//0WwnUEkjSic5tMbAjn0xLBKnbXG3PETp7kfWFpb05DPCYvVIsZI0V9N3KdjS8wScj/81KTYiBKfXEceTX5mXbOzLY/gSsWFtHTf9jvUvdZrI09OR5DsndDvA2t86UCl6VWkjigGsSqtnHEq271YJubHn9PzGP5rvyImmi0r+0JLu60yfyH2sU7BjHlofypIAf/RhoIPVUyV2dGRanxg2ULhVkeCdsz0p2NyCqAcUJzAdt3ScZHLOQYWIstBtLc+ZN1RrkhKNgrdcluH5bBBlKPGPwnrLuAsAbk2vH/DjtFMSrm2/HZpAMKtGAwjMBio4jCIax0CykW/5DsdHXq+u49cAE9XNT9IdSa9bXMY03GzquBVEubgIfoqT1CgzSnhtCQ0LwZkKg1GvdoIYPuHZLrl1nBfswFxpE9RDnIprDdwsUhvW1d9bDmwpiYXDYJ8xofkm6dFvd/2kVPInviudd25voTUSrbWI7h0K3QhyO7o1R39gJrLrk+aG0s=
