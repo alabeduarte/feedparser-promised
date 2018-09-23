@@ -29,7 +29,7 @@ yarn init -y
 
 echo "installing package from local source"
 yarn add file:$package
-yarn add mocha@3.2.0
+yarn add mocha@5.2.0
 }
 
 function generate_file () {
