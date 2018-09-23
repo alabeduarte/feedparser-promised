@@ -12,7 +12,7 @@
     "test:watch": "yarn test --watch",
     "prepare": "babel src -d lib --ignore 'src/*.test.js'",
     "commit": "git-cz",
-    "smoke": "./smoke.sh"
+    "smoke": "docker-compose run smoke-test"
   },
   "files": [
     "lib"

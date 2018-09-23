@@ -1,4 +1,6 @@
-sudo: false
+sudo: required
+services:
+  - docker
 language: node_js
 cache:
   directories:
@@ -6,10 +8,10 @@ cache:
 notifications:
   email: false
 install:
-- yarn install
+  - yarn install
 script:
-- yarn test
-- yarn smoke
+  - yarn test
+  - yarn smoke
 deploy:
   on:
     branch: master
