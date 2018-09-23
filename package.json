@@ -11,6 +11,7 @@
     "test": "jest",
     "test:watch": "yarn test --watch",
     "prepare": "babel src -d lib --ignore 'src/*.test.js'",
+    "commit": "git-cz",
     "smoke": "./smoke.sh"
   },
   "files": [
@@ -26,11 +27,14 @@
     "babel-cli": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "commitizen": "^2.10.1",
     "eslint": "5.6.0",
     "faker": "4.1.0",
+    "ghooks": "^2.0.4",
     "jest": "23.6.0",
     "nock": "10.0.0",
     "prettier-eslint-cli": "4.7.1",
+    "validate-commit-msg": "^2.14.0",
     "xmlbuilder": "^10.0.0"
   },
   "jest": {
@@ -61,6 +65,20 @@
     "presets": [
       "es2015"
     ]
+  },
+  "config": {
+    "validate-commit-msg": {
+      "helpMessage": "If you are unsure on how to structure your commit message, execute 'yarn commit' for a step-by-step.",
+      "autoFix": true
+    },
+    "ghooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "validate-commit-msg",
+      "pre-push": "yarn test"
+    },
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "author": "Alabe Duarte",
   "license": "MIT",
