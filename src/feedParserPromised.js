@@ -1,28 +1,18 @@
 'use strict';
 
 const request = require('request');
-const FeedParser = require('feedparser');
+const FeedParser = require('./feedParser');
 
 const parse = (requestOptions, feedparserOptions) => {
   return new Promise((resolve, reject) => {
-    const parsedItems = [];
-    const feedparser = new FeedParser(feedparserOptions);
-
-    feedparser.on('error', reject).on('readable', () => {
-      let item;
-
-      while (item = feedparser.read()) {
-        parsedItems.push(item);
-      }
-
-      return parsedItems;
-    });
+    const feedparser = new FeedParser(feedparserOptions)
+      .on('error', reject)
+      .on('response', resolve);
 
     request
       .get(requestOptions)
       .on('error', reject)
-      .pipe(feedparser)
-      .on('end', () => resolve(parsedItems));
+      .pipe(feedparser);
   });
 };
 
