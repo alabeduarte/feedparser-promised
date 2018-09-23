@@ -5,12 +5,12 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "lint": "eslint src/** test**",
+    "lint": "eslint src/**",
     "format": "prettier-eslint \"src/**/*.js\" --write",
     "pretest": "yarn lint",
     "test": "jest",
     "test:watch": "yarn test --watch",
-    "prepare": "babel src -d lib",
+    "prepare": "babel src -d lib --ignore 'src/*.test.js'",
     "smoke": "./smoke.sh"
   },
   "files": [

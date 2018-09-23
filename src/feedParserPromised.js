@@ -6,12 +6,12 @@ const FeedParser = require('feedparser');
 const parse = (requestOptions, feedparserOptions) => {
   return new Promise((resolve, reject) => {
     const parsedItems = [];
+    const feedparser = new FeedParser(feedparserOptions);
 
-    const feedParser = new FeedParser(feedparserOptions);
-    feedParser.on('error', reject).on('readable', () => {
+    feedparser.on('error', reject).on('readable', () => {
       let item;
 
-      while (item = feedParser.read()) {
+      while (item = feedparser.read()) {
         parsedItems.push(item);
       }
 
@@ -21,7 +21,7 @@ const parse = (requestOptions, feedparserOptions) => {
     request
       .get(requestOptions)
       .on('error', reject)
-      .pipe(feedParser)
+      .pipe(feedparser)
       .on('end', () => resolve(parsedItems));
   });
 };
