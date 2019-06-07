@@ -824,6 +824,14 @@
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.1.tgz#9794c69c8385d0192acc471a540d1f8e0d16218a"
 
+"@types/feedparser@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@types/feedparser/-/feedparser-2.2.1.tgz#6804f13a8598d3336a469dabac00e662c4cd9225"
+  integrity sha512-Up/CPV8zqm3QS39kCN98dMbJGPBGqOB5z+6aNht7MkqT1ZSzWwPbcwsMifASUevn+DIvssPgxwCQsLBE0j8syQ==
+  dependencies:
+    "@types/node" "*"
+    "@types/sax" "*"
+
 "@types/form-data@*":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@types/form-data/-/form-data-2.2.1.tgz#ee2b3b8eaa11c0938289953606b745b738c54b1e"
@@ -849,13 +857,6 @@
   dependencies:
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
-
-"@types/node-feedparser@2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@types/node-feedparser/-/node-feedparser-2.2.1.tgz#81ecf04b76c80de40138c57b26a4249033531c78"
-  dependencies:
-    "@types/node" "*"
-    "@types/sax" "*"
 
 "@types/node@*":
   version "10.9.4"
