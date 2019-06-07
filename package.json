@@ -1,6 +1,6 @@
 {
   "name": "feedparser-promised",
-  "version": "2.0.0",
+  "version": "2.0.1-relase-candidate",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "types": "index.d.ts",
