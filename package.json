@@ -35,7 +35,7 @@
     "nock": "10.0.0",
     "prettier-eslint-cli": "4.7.1",
     "validate-commit-msg": "^2.14.0",
-    "xmlbuilder": "^10.0.0"
+    "xmlbuilder": "^13.0.2"
   },
   "jest": {
     "testEnvironment": "node"
