@@ -1,7 +1,7 @@
 'use strict';
 const FeedParserStream = require('feedparser');
 
-const FeedParser = feedparserOptions => {
+module.exports = feedparserOptions => {
   const parsedItems = [];
   const feedparser = new FeedParserStream(feedparserOptions);
 
@@ -20,5 +20,3 @@ const FeedParser = feedparserOptions => {
 
   return feedparser;
 };
-
-module.exports = FeedParser;

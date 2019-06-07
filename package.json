@@ -1,6 +1,6 @@
 {
   "name": "feedparser-promised",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Wrapper around feedparser with promises",
   "main": "index.js",
   "types": "index.d.ts",
@@ -18,24 +18,25 @@
     "lib"
   ],
   "dependencies": {
-    "@types/node-feedparser": "2.2.1",
-    "@types/request": "2.47.1",
+    "@types/feedparser": "2.2.1",
+    "@types/request": "2.48.1",
     "feedparser": "2.2.9",
     "request": "2.88.0"
   },
   "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "commitizen": "^2.10.1",
-    "eslint": "5.6.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "commitizen": "^3.1.1",
+    "eslint": "5.16.0",
     "faker": "4.1.0",
     "ghooks": "^2.0.4",
-    "jest": "23.6.0",
-    "nock": "10.0.0",
+    "jest": "24.8.0",
+    "nock": "10.0.6",
     "prettier-eslint-cli": "4.7.1",
     "validate-commit-msg": "^2.14.0",
-    "xmlbuilder": "^10.0.0"
+    "xmlbuilder": "^13.0.2"
   },
   "jest": {
     "testEnvironment": "node"
@@ -54,16 +55,15 @@
     "promise"
   ],
   "babel": {
-    "plugins": [
+    "presets": [
       [
-        "transform-object-rest-spread",
+        "@babel/preset-env",
         {
-          "useBuiltIns": true
+          "targets": {
+            "node": "current"
+          }
         }
       ]
-    ],
-    "presets": [
-      "es2015"
     ]
   },
   "config": {
