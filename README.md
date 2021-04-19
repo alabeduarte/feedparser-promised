@@ -1,10 +1,17 @@
-# feedparser-promised
+# [DEPRECATED] feedparser-promised
 
 [![npm version](https://img.shields.io/npm/v/feedparser-promised.svg)](https://www.npmjs.com/package/feedparser-promised)
 [![downloads](https://img.shields.io/npm/dm/feedparser-promised.svg)](https://www.npmjs.com/package/feedparser-promised)
 [![npm license](https://img.shields.io/npm/l/feedparser-promised.svg)](https://spdx.org/licenses/MIT)
 [![travis build](https://img.shields.io/travis/alabeduarte/feedparser-promised.svg)](https://travis-ci.org/alabeduarte/feedparser-promised)
 [![codeclimate score](https://img.shields.io/codeclimate/github/alabeduarte/feedparser-promised.svg)](https://codeclimate.com/github/alabeduarte/feedparser-promised)
+
+⛔️ DEPRECATED
+
+I've decided to deprecate this libary as [feedparser](https://github.com/danmactough/node-feedparser) already does a pretty good job to parse content from a RSS feed.
+
+This repo, as a wrapper, will always get behind the newly features and security updates.
+If you used this library until now or have even considered, thank you and I'm sorry.
 
 Wrapper around [feedparser](https://github.com/danmactough/node-feedparser) with promises.
 
